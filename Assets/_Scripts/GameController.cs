@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿
+/*
+ * Sourcefile name : GameController
+ * Author’s name: Anjith Babu
+ * Last	Modifiedby: Anjith Babu
+ * Date	lastModified : Feb 05, 2016	
+ * Program	description: The StartCoroutine is obtained after referencing following link http://answers.unity3d.com/questions/569864/blink-objec-on-collision.html	
+ */
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -92,6 +101,8 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    // Things to do when game ends
+
     private void _endGame()
     {
         this.gameNotOver = false;
@@ -107,13 +118,15 @@ public class GameController : MonoBehaviour {
 
     }
 
-    // PUBLIC METHODS
+    // PUBLIC METHODS ------------------------------//
 
     public void RestartButtonClick()
     {
         gameNotOver = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    // Control the behaviour of hero submarine when it is hit by enemy
 
     public void controlHero() {
         if (gameNotOver)
@@ -122,15 +135,17 @@ public class GameController : MonoBehaviour {
         }
     }
 
+
     IEnumerator makeHeroDisappear() 
     {
+        //move hero out of the frame
          this.transform = this.heroSub.gameObject.GetComponent<Transform>();
          this.transform.position = new Vector2(-368f, 0);
 
         //wait for a bit
         yield return new WaitForSeconds(1);
      
-        //make sure renderer is enabled when we exit
+        //bring hero back
         this.transform.position = new Vector2(-297f, 0);
      }
      

@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿
+/*
+ * Sourcefile name : HeroSubController
+ * Author’s name: Anjith Babu
+ * Last	Modifiedby: Anjith Babu
+ * Date	lastModified : Feb 05, 2016	
+ */
+using UnityEngine;
 using System.Collections;
 
 public class HeroSubController : MonoBehaviour {

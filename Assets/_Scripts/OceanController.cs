@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿
+/*
+ * Sourcefile name : OceanController
+ * Author’s name: Anjith Babu
+ * Last	Modifiedby: Anjith Babu
+ * Date	lastModified : Feb 05, 2016	
+ */
+
+
+using UnityEngine;
 using System.Collections;
 
 public class OceanController : MonoBehaviour 
@@ -34,6 +43,7 @@ public class OceanController : MonoBehaviour
         }
     }
 
+    // Reset OCean
     public void Reset()
     {
         this._transform.position = new Vector2(505, 0);

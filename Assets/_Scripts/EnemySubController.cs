@@ -1,4 +1,12 @@
-﻿using UnityEngine;
+﻿
+/*
+ * Sourcefile name : EnemySubController
+ * Author’s name: Anjith Babu
+ * Last	Modifiedby: Anjith Babu
+ * Date	lastModified : Feb 05, 2016	
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class EnemySubController : MonoBehaviour {
@@ -39,6 +47,7 @@ public class EnemySubController : MonoBehaviour {
         
     }
 
+    // Reset enemy
     public void Reset()
     {
         this._verticalSpeed = Random.Range(this.minVerticalSpeed, this.maxVerticalSpeed);

@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/*
+ * Sourcefile name : PearlController
+ * Author’s name: Anjith Babu
+ * Last	Modifiedby: Anjith Babu
+ * Date	lastModified : Feb 05, 2016	
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class PearlController : MonoBehaviour {
@@ -29,6 +36,8 @@ public class PearlController : MonoBehaviour {
 			this.Reset ();
 		}
 	}
+
+    // Reset Pearl
 
     public void Reset()
     {

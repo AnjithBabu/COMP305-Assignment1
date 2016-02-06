@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/*
+ * Sourcefile name : HeroCollider
+ * Author’s name: Anjith Babu
+ * Last	Modifiedby: Anjith Babu
+ * Date	lastModified : Feb 05, 2016	
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class HeroCollider : MonoBehaviour {
@@ -27,6 +34,8 @@ public class HeroCollider : MonoBehaviour {
     {
 
     }
+
+    // Stuff to do when Hero Submarine collides with other objects
 
     public void OnTriggerEnter2D(Collider2D other)
     {
