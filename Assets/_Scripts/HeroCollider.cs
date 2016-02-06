@@ -7,6 +7,8 @@ public class HeroCollider : MonoBehaviour {
     private AudioSource[] _audioSources;
     private AudioSource _pearlSound;
     private AudioSource _enemySubSound;
+    public PearlController pearl;
+    public HeroSubController heroSub;
 
     // PUBLIC INSTANCE VARIABLES
     public GameController gameController;
@@ -32,12 +34,14 @@ public class HeroCollider : MonoBehaviour {
         {
             this._pearlSound.Play();
             this.gameController.ScoreValue += 100;
+            this.pearl.Reset();
+            
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
             this._enemySubSound.Play();
             this.gameController.LivesValue -= 1;
-            
+            this.gameController.controlHero(); 
         }
     }
 }

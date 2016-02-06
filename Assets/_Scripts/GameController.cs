@@ -58,6 +58,8 @@ public class GameController : MonoBehaviour {
     public Text GameOverLabel;
     public Text HighScoreLabel;
     public Button RestartButton;
+    public bool gameNotOver = true;
+    public Transform transform;
 
     // Use this for initialization
     void Start()
@@ -92,6 +94,7 @@ public class GameController : MonoBehaviour {
 
     private void _endGame()
     {
+        this.gameNotOver = false;
         this.HighScoreLabel.text = "High Score: " + this._scoreValue;
         this.GameOverLabel.gameObject.SetActive(true);
         this.HighScoreLabel.gameObject.SetActive(true);
@@ -101,14 +104,34 @@ public class GameController : MonoBehaviour {
         this.pearl.gameObject.SetActive(false);
         this._gameOverSound.Play();
         this.RestartButton.gameObject.SetActive(true);
+
     }
 
     // PUBLIC METHODS
 
     public void RestartButtonClick()
     {
+        gameNotOver = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void controlHero() {
+        if (gameNotOver)
+        {
+            StartCoroutine(makeHeroDisappear());
+        }
+    }
+
+    IEnumerator makeHeroDisappear() 
+    {
+         this.transform = this.heroSub.gameObject.GetComponent<Transform>();
+         this.transform.position = new Vector2(-368f, 0);
+
+        //wait for a bit
+        yield return new WaitForSeconds(1);
      
+        //make sure renderer is enabled when we exit
+        this.transform.position = new Vector2(-297f, 0);
+     }
      
 }
